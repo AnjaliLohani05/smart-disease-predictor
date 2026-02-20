@@ -1,0 +1,169 @@
+{% extends 'main.html' %}
+{% block content %}
+
+{% if message %}
+<div class="alert alert-danger text-center">
+    {{ message }}
+</div>
+{% endif %}
+
+<style>
+.page-bg {
+    font-family: Cambria;
+    min-height: 100vh;
+    background: linear-gradient(#4e0374, #c37ee6);
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.main-card {
+    border: 1px solid black;
+    box-shadow: 0 0 15px black;
+    background-color: #edc8ff;
+    padding: 20px;
+}
+
+.section-card {
+    box-shadow: 0 0 8px black;
+    margin: 10px 0;
+    background-color: #daa8f4;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+}
+</style>
+
+<div class="page-bg">
+<div class="container">
+
+<div class="card main-card">
+
+    <h1>HealthNexus: Smart Disease Predictor</h1>
+    <br>
+
+    <h2>Model Accuracies:</h2>
+    <ul>
+        <li>Diabetes Model: <strong>92.54%</strong></li>
+        <li>Heart Disease Model: <strong>98.70%</strong></li>
+        <li>Breast Cancer Model: <strong>97.66%</strong></li>
+        <li>Kidney Disease Model: <strong>99.16%</strong></li>
+        <li>Liver Disease Model: <strong>71.18%</strong></li>
+        <li>Malaria Model: <strong>95.65%</strong></li>
+        <li>Pneumonia Model: <strong>91.35%</strong></li>
+    </ul>
+
+    <br>
+    <h3>Information about the Diseases:</h3>
+    <br>
+
+    <!-- Diabetes -->
+    <div class="section-card">
+        <h4>Diabetes</h4>
+        <p>Diabetes mellitus is a group of diseases that affect how your body uses blood sugar (glucose). Too much sugar in your blood can lead to serious health problems.</p>
+        <h5>Symptoms</h5>
+        <ul>
+            <li>Increased thirst</li>
+            <li>Frequent urination</li>
+            <li>Extreme hunger</li>
+            <li>Unexplained weight loss</li>
+            <li>Blurred vision</li>
+        </ul>
+    </div>
+
+    <!-- Heart -->
+    <div class="section-card">
+        <h4>Heart Disease</h4>
+        <p>Cardiovascular disease refers to conditions affecting the heart and blood vessels. It can lead to serious complications if untreated.</p>
+        <h5>Symptoms</h5>
+        <ul>
+            <li>Chest pain</li>
+            <li>Shortness of breath</li>
+            <li>Palpitations</li>
+            <li>Sweating</li>
+            <li>Lightheadedness</li>
+        </ul>
+    </div>
+
+    <!-- Breast Cancer -->
+    <div class="section-card">
+        <h4>Breast Cancer</h4>
+        <p>Breast cancer is a type of cancer that begins in breast cells. It is one of the most common cancers worldwide.</p>
+        <h5>Symptoms</h5>
+        <ul>
+            <li>Lump in breast</li>
+            <li>Swelling</li>
+            <li>Skin irritation</li>
+            <li>Nipple pain</li>
+            <li>Redness</li>
+        </ul>
+    </div>
+
+    <!-- Kidney -->
+    <div class="section-card">
+        <h4>Chronic Kidney Disease</h4>
+        <p>CKD is a long-term condition where kidneys do not function properly and cannot filter waste effectively.</p>
+        <h5>Symptoms</h5>
+        <ul>
+            <li>Nausea</li>
+            <li>Fatigue</li>
+            <li>Muscle cramps</li>
+            <li>Loss of appetite</li>
+            <li>Vomiting</li>
+        </ul>
+    </div>
+
+    <!-- Liver -->
+    <div class="section-card">
+        <h4>Liver Disease</h4>
+        <p>Liver disease refers to conditions that damage the liver and affect its ability to function properly.</p>
+        <h5>Symptoms</h5>
+        <ul>
+            <li>Abdominal pain</li>
+            <li>Bruising easily</li>
+            <li>Fatigue</li>
+            <li>Nausea</li>
+            <li>Vomiting</li>
+        </ul>
+    </div>
+
+    <!-- Malaria -->
+    <div class="section-card">
+        <h4>Malaria</h4>
+        <p>Malaria is a mosquito-borne infectious disease caused by parasites and can become life-threatening without treatment.</p>
+        <h5>Symptoms</h5>
+        <ul>
+            <li>Fever</li>
+            <li>Chills</li>
+            <li>Headache</li>
+            <li>Muscle pain</li>
+            <li>Fatigue</li>
+        </ul>
+    </div>
+
+    <!-- Pneumonia -->
+    <div class="section-card">
+        <h4>Pneumonia</h4>
+        <p>Pneumonia is a lung infection that causes inflammation in air sacs and can be caused by bacteria, viruses, or fungi.</p>
+        <h5>Symptoms</h5>
+        <ul>
+            <li>High fever</li>
+            <li>Cough with mucus</li>
+            <li>Fatigue</li>
+            <li>Muscle pain</li>
+            <li>Sore throat</li>
+        </ul>
+    </div>
+
+</div>
+</div>
+</div>
+
+{% endblock %}

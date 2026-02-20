@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="og:title" content="HealthNexus: Smart Disease Predictor">
+  <meta name="author" content="Aditi, Anjali, Janvi">
+  <meta name="og:image" content="static/favicon.ico">
+  <title>HealthNexus</title>
+  <link rel="icon" type="image/x-icon" href="static/favicon.ico?v=2"  />
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <style>
+    html, body{
+        height:100%;
+        margin:0;
+    }
+
+    body{
+      display:flex;
+      flex-direction:column;
+      font-family: Cambria;
+    }
+
+    footer{
+      padding:10px;
+      margin-top:auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" 
+       style="background-image: linear-gradient(#4e0374, #4e0374) !important;">
+
+    <a href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='logo.png') }}" 
+           height="70px" width="180px">
+    </a>
+
+    <button class="navbar-toggler" type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item active">
+          <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('diabetesPage') }}">Diabetes</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('cancerPage') }}">Breast Cancer</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('heartPage') }}">Heart</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('kidneyPage') }}">Kidney</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('liverPage') }}">Liver</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('malariaPage') }}">Malaria</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('pneumoniaPage') }}">Pneumonia</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <br><br><br><br>
+
+  <main>
+    <div class="container-fluid" style="margin-bottom: 20px;">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
+
+  <footer style="background-image: linear-gradient(#4e0374, #4e0374) !important;">
+    <center>
+      <ul style="list-style-type:none;">
+        <li>
+          <p style="color: white;">
+            Made with <span style="color: red;">&hearts;</span> 
+            by Aditi, Anjali, and Janvi
+          </p>
+        </li>
+      </ul>
+    </center>
+  </footer>
+
+</body>
+</html>
