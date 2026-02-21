@@ -1,0 +1,96 @@
+# train_config.yaml
+# Configuration for the Smart Disease Predictor training pipeline.
+# Training scripts read dataset paths and hyperparameters from here.
+
+logging:
+  level: INFO
+  log_to_file: false
+  log_file: "training.log"
+
+# ── Tabular (sklearn) models ──────────────────────────────────────────────────
+tabular:
+
+  diabetes:
+    dataset_path: "data/diabetes.csv"
+    model_path: "models/diabetes.pkl"
+    test_size: 0.30
+    random_state: 0
+    model: RandomForestClassifier
+    hyperparameters:
+      criterion: entropy
+      max_depth: 15
+      max_features: sqrt
+      min_samples_leaf: 2
+      min_samples_split: 3
+      n_estimators: 130
+
+  heart:
+    dataset_path: "data/heart.csv"
+    model_path: "models/heart.pkl"
+    test_size: 0.30
+    random_state: 0
+    model: RandomForestClassifier
+    hyperparameters:
+      criterion: gini
+      max_depth: 7
+      max_features: sqrt
+      min_samples_leaf: 2
+      min_samples_split: 4
+      n_estimators: 180
+
+  breast_cancer:
+    dataset_path: "data/breast_cancer.csv"
+    model_path: "models/breast_cancer.pkl"
+    test_size: 0.30
+    random_state: 0
+    model: SVC
+    hyperparameters:
+      C: 10
+      gamma: 0.01
+      probability: true
+
+  kidney:
+    dataset_path: "data/kidney.csv"
+    model_path: "models/kidney.pkl"
+    test_size: 0.30
+    random_state: 0
+    model: RandomForestClassifier
+    hyperparameters:
+      criterion: entropy
+      max_depth: 10
+      max_features: sqrt
+      min_samples_leaf: 5
+      min_samples_split: 2
+      n_estimators: 400
+
+  liver:
+    dataset_path: "data/liver.csv"
+    model_path: "models/liver.pkl"
+    test_size: 0.30
+    random_state: 0
+    model: SVC
+    hyperparameters:
+      C: 0.01
+      gamma: 0.0001
+      probability: true
+
+# ── Image (PyTorch) models ──────────────────────────────────────────────────
+image:
+
+  malaria:
+    dataset_path: "cell_images"
+    model_path: "models/malaria.pth"
+    img_size: 128
+    batch_size: 32
+    num_classes: 2
+    epochs: 10
+    learning_rate: 0.001
+
+  pneumonia:
+    dataset_path: "chest_xray"
+    model_path: "models/pneumonia.pth"
+    img_size: 128
+    batch_size: 32
+    num_classes: 2
+    epochs: 15
+    learning_rate: 0.001
